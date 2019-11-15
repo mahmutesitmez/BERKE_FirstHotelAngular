@@ -1,27 +1,58 @@
 <!DOCTYPE html>
+<style>
+  * {
+    font-family: Arial;
+  }
+
+  #MainContent {
+    width: 664px;
+    float: left;
+    padding-left: 200px;
+    margin: 0px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  button {
+    background-color: lightskyblue;
+    font-style: normal;
+    font-size: 12pt;
+    font-family: Tahoma;
+    color: brown;
+  }
+</style>
 <body>
   
-  <form class="example-form">
-    <label>Ad Soyad:</label>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Your First Name and Surname">
-    </mat-form-field>
-    <br />
-    <label style="font-family:'Times New Roman'">E-Posta:</label>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Your E-Mail Address">
-    </mat-form-field>
-    <br />
-    <label style="font-family:'Times New Roman'">Şifre:</label>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Your Password">
-    </mat-form-field>
-    <div class="example-button-row">
+  <form class="example-form" >
+    <div class="center" >
+      <div id="MainContent" >
 
-      <button mat-raised-button color="primary" routerLink="/Home">Register</button>
-      <button mat-raised-button color="basic" routerLink="/Sign_In">Cancel</button>
+
+
       
+      <label>Ad Soyad:</label>
+      <mat-form-field class="example-full-width">
+        <input type="text">
+      </mat-form-field>
+      <br />
+      <label>E-Posta:</label>
+      <mat-form-field class="example-full-width">
+        <input type="text">
+      </mat-form-field>
+      <br />
+      <label>Şifre:</label>
+      <mat-form-field class="example-full-width">
+        <input type="text">
+      </mat-form-field>
+      <div class="example-button-row">
 
+        <button mat-raised-button color="basic" routerLink="/Sign_In">Register</button>
+        <button mat-raised-button color="basic" routerLink="/Home">Cancel</button>
+
+      </div>
+    </div>
     </div>
   </form>
   

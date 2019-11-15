@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Sign_InComponent } from './Sign_In/Sign_In.component';
 import { Sign_UpComponent } from './Sign_Up/Sign_Up.component';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Hone_PageComponent } from './Home_Page/Home_Page.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { Hone_PageComponent } from './Home_Page/Home_Page.component';
     Sign_InComponent,
     Sign_UpComponent,
     Hone_PageComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,10 @@ import { Hone_PageComponent } from './Home_Page/Home_Page.component';
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    MatSidenavModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

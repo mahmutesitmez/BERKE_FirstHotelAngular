@@ -8,14 +8,7 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+
 
   h1,
   h2,
@@ -34,19 +27,8 @@
     flex: 1;
   }
 
-  .toolbar {
-    height: 60px;
-    margin: -8px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
 
-  .toolbar img {
-    margin: 0 16px;
-  }
+
 
 
   .content {
@@ -58,9 +40,6 @@
     align-items: center;
   }
 
- 
-
-
   a,
   a:visited,
   a:hover {
@@ -68,66 +47,107 @@
     text-decoration: none;
   }
 
-  a:hover {
-    color: #125699;
+    a:hover {
+      color: #125699;
+    }
+
+ 
+
+  button
+  {
+      background-color:lightskyblue;
+      font-style:normal;
+      font-size:12pt;
+      font-family:Tahoma;
+      color:brown;
   }
 
-
-
-  .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
+ 
+  .center
+  {
     display: flex;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
+    align-items:center;
+  }
+  ul li
+  {
+    color: white;
   }
 
-  .circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
+    ul li a
+    {
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
 
+  header {
+   grid-area:header;
+    color:black;
+  text-align:center;
+    background: #f1b5b5;
+  }
+  nav {
+    
+    grid-area: nav;
+    
+    background-color: #2A92BF;
+  }
+  aside {
+    
+    grid-area: side;
+    
+    background-color: #2A92BF;
+  }
   footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
+    grid-area:footer;
+    background-color: aqua;
+    font-size: 20pt;
+    text-align:center;
+    padding:25px 0;
   }
+  mat-sidenav
+  {
+    width:280px;padding:15px;
+    background-color:blue; color:white;
 
-  footer a {
-    display: flex;
-    align-items: center;
   }
-
  
-
 </style>
+<mat-toolbar>My App</mat-toolbar>
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img width="40"
-       alt="Angular Logo"
-       src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+  <header>
+    <div class="spacer"></div>
+    <div class="center">
+      <h3>Hotel Page</h3>
+    </div>
+    <div class="example-button-row">
+      <button mat-raised-button color="basic" routerLink="/Home">Home Page</button>
+      <button mat-raised-button color="basic" routerLink="/Sign_In">Sign In</button>
+      <button mat-raised-button color="basic" routerLink="/Sign_Up">Sign Up</button>
+    </div>
+  </header>
+
+
+  <mat-sidenav-container >
+    <mat-sidenav mode="side" opened>
+      <ul>
+        <li><a routerLink="/Home">Home Page </a></li>
+        <li><a routerLink="/Sign_In">Sign In </a></li>
+        <li><a routerLink="/Sign_Up">Sign Up </a></li>
+      </ul>
+    </mat-sidenav>
+    
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
  
-  <div class="spacer"></div>
-
-  <div class="example-button-row">
-   
-    <button mat-raised-button color="primary" routerLink="/Home">Home Page</button>
-    <button mat-raised-button color="accent" routerLink="/Sign_In">Sign In</button>
-    <button mat-raised-button color="warn" routerLink="/Sign_Up">Sign Up</button>
-  
-  </div>
-
-</div>
+  <aside>
+    <h3>Sidebar</h3>
+  </aside>
+  <footer>
+    <p>HolidayInn</p>
+  </footer>
 
 
 
-<router-outlet></router-outlet>
