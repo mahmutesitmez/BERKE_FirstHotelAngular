@@ -6,5 +6,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HolidayInn First Application';
+  opened: boolean = false;
+  go() {
+    if (this.opened)
+      this.opened = false;
+    else
+      this.opened = true;
+  }
 }

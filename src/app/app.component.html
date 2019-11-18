@@ -18,7 +18,10 @@
   h6 {
     margin: 8px 0;
   }
-
+  h4
+  {
+    color:azure;
+  }
   p {
     margin: 0;
   }
@@ -27,7 +30,9 @@
     flex: 1;
   }
 
-
+  .example-spacer {
+    flex: 1 1 auto;
+  }
 
 
 
@@ -43,7 +48,7 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: cyan;
     text-decoration: none;
   }
 
@@ -51,103 +56,122 @@
       color: #125699;
     }
 
- 
 
-  button
-  {
-      background-color:lightskyblue;
-      font-style:normal;
-      font-size:12pt;
-      font-family:Tahoma;
-      color:brown;
+
+  button {
+    background-color: lightskyblue;
+    font-style: normal;
+    font-size: 12pt;
+    font-family: Tahoma;
+    color: brown;
+  }
+  .mat-icon-button {
+    background-color: firebrick;
+    color:white;
   }
 
- 
-  .center
-  {
+  .center {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
   }
-  ul li
-  {
+
+  ul li {
     color: white;
   }
 
-    ul li a
-    {
+    ul li a {
       color: white;
       text-decoration: none;
       display: inline-block;
-      margin-bottom: 15px;
+      margin-bottom: 0px;
+      font-size:20px;
     }
 
-  header {
-   grid-area:header;
-    color:black;
-  text-align:center;
-    background: #f1b5b5;
+  .mat-toolbar {
+    color: white;
+    justify-content: space-between;
+    background-color: firebrick;
   }
+
   nav {
-    
-    grid-area: nav;
-    
     background-color: #2A92BF;
   }
-  aside {
-    
-    grid-area: side;
-    
-    background-color: #2A92BF;
-  }
-  footer {
-    grid-area:footer;
-    background-color: aqua;
-    font-size: 20pt;
-    text-align:center;
-    padding:25px 0;
-  }
-  mat-sidenav
+
+
+  mat-sidenav-container
   {
-    width:280px;padding:15px;
-    background-color:blue; color:white;
-
+    height:100%;
   }
- 
+
+  mat-sidenav {
+    width: 200px;
+    background-color: blue;
+  }
+    mat-sidenav, mat-sidenav-content
+    {
+      padding:16px;
+    }
+
+    .example-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  .page-footer {
+    font-size: 12pt;
+    background-color: firebrick;
+    color:white;
+  }
 </style>
-<mat-toolbar>My App</mat-toolbar>
 
-  <header>
-    <div class="spacer"></div>
-    <div class="center">
-      <h3>Hotel Page</h3>
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="go()">menu</mat-icon>
+    </button>
+    <span style="color:cyan">Odeon</span>
+    <span class="example-spacer"></span>
+    <div>
+      <a mat-button  routerLink="/Home">Home Page</a>
+      <a mat-button  routerLink="/Sign_In">Sign In</a>
+      <a mat-button  routerLink="/Sign_Up">Sign Up</a>
     </div>
-    <div class="example-button-row">
-      <button mat-raised-button color="basic" routerLink="/Home">Home Page</button>
-      <button mat-raised-button color="basic" routerLink="/Sign_In">Sign In</button>
-      <button mat-raised-button color="basic" routerLink="/Sign_Up">Sign Up</button>
-    </div>
-  </header>
 
+  </mat-toolbar-row>
+</mat-toolbar>
 
-  <mat-sidenav-container >
-    <mat-sidenav mode="side" opened>
-      <ul>
-        <li><a routerLink="/Home">Home Page </a></li>
-        <li><a routerLink="/Sign_In">Sign In </a></li>
-        <li><a routerLink="/Sign_Up">Sign Up </a></li>
-      </ul>
-    </mat-sidenav>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+   <h4>Start Page</h4>
+    <ul>
+      <li>
+        <a mat-button routerLink="/Home">Home</a>
+      </li>
+      <li>
+        <a mat-button routerLink="/Sign_In">Sign In</a>
+      </li>
+      <li>
+        <a mat-button routerLink="/Sign_Up">Sign Up</a>
+      </li>
+    </ul>
+  </mat-sidenav>
+    <mat-sidenav-content>
+     
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
     
-    <router-outlet></router-outlet>
-  </mat-sidenav-container>
- 
-  <aside>
-    <h3>Sidebar</h3>
-  </aside>
-  <footer>
-    <p>HolidayInn</p>
+</mat-sidenav-container>
+
+
+  
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-copyright text-center py-3">
+      2019 Odeon: A Hotel Page
+    </div>
   </footer>
-
-
-
+  <!-- Footer -->

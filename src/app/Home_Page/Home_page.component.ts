@@ -5,5 +5,4 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './Home_Page.component.html'
 })
 export class Hone_PageComponent {
-  title = 'HolidayInn First Application';
 }

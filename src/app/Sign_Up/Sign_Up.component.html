@@ -1,59 +1,51 @@
-<!DOCTYPE html>
-<style>
-  * {
-    font-family: Arial;
-  }
 
+<style>
   #MainContent {
     width: 664px;
     float: left;
     padding-left: 200px;
     margin: 0px;
   }
+
   .center {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
   }
-  button {
-    background-color: lightskyblue;
+
+  .mat-raised-button {
+    background-color: firebrick;
     font-style: normal;
     font-size: 12pt;
     font-family: Tahoma;
-    color: brown;
+    color: ivory;
   }
 </style>
-<body>
-  
-  <form class="example-form" >
-    <div class="center" >
-      <div id="MainContent" >
+<form class="example-form">
+  <div class="center">
+    <div id="MainContent">
 
-
-
-      
       <label>Ad Soyad:</label>
       <mat-form-field class="example-full-width">
-        <input type="text">
+        <input matInput type="text">
       </mat-form-field>
       <br />
       <label>E-Posta:</label>
       <mat-form-field class="example-full-width">
-        <input type="text">
+        <input matInput type="text">
       </mat-form-field>
       <br />
       <label>Şifre:</label>
       <mat-form-field class="example-full-width">
-        <input type="text">
+        <input matInput type="text">
       </mat-form-field>
       <div class="example-button-row">
 
-        <button mat-raised-button color="basic" routerLink="/Sign_In">Register</button>
-        <button mat-raised-button color="basic" routerLink="/Home">Cancel</button>
+        <button mat-raised-button  routerLink="/Sign_In">Register</button>
+        <button mat-raised-button  routerLink="/Home">Cancel</button>
 
       </div>
     </div>
-    </div>
-  </form>
-  
-</body>
+  </div>
+</form>
+

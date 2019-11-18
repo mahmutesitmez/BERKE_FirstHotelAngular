@@ -5,5 +5,4 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './Sign_Up.component.html'
 })
 export class Sign_UpComponent {
-  title = 'HolidayInn First Application';
 }
